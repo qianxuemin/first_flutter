@@ -1,5 +1,7 @@
+import 'package:first_flutter/demo/post_show.dart';
 import 'package:flutter/material.dart';
 import '../model/post.dart';
+import './post_show.dart';
 
 class ListViewDemo extends StatelessWidget {
   Widget _listItemBuilder(BuildContext context, int index) {
@@ -38,7 +40,9 @@ class ListViewDemo extends StatelessWidget {
                   // 设置高亮颜色
                   highlightColor: Colors.white.withOpacity(0.1),
                   onTap: (){
-                    debugPrint('tap');
+                    Navigator.of(context).push(
+                      MaterialPageRoute(builder:(context)=>PostShow(post:posts[index]))
+                    );
                   }
                 ),
               ),
